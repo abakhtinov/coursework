@@ -17,66 +17,66 @@ public class Main {
         LIST[7] = new Employee("Никита Андреевич Александров", 3, 45000);
         LIST[8] = new Employee("Андрей Константинович Никитин", 5, 110000);
         LIST[9] = new Employee("Мария Федоровна Юрьева", 2, 95000);
-        lists(LIST);
-        sumSalary(LIST);
-        minSalary(LIST);
-        maxSalary(LIST);
-        avarageSalary(LIST);
-        fioEmployee(LIST);
+        lists();
+        sumSalary();
+        minSalary();
+        maxSalary();
+        avarageSalary();
+        fioEmployee();
 
-        System.out.println("Сумма затрат на зарплаты " + sumSalary(LIST) + " руб.");
-        System.out.println("Сотрудник с минимальной зарплатой - " + minSalary(LIST) + " руб.");
-        System.out.println("Сотрудник с максимальной зарплатой - " + maxSalary(LIST) + " руб.");
-        System.out.println("Средняя зарплата сотрудников равна " + avarageSalary(LIST) + "руб.");
+        System.out.println("Сумма затрат на зарплаты " + sumSalary() + " руб.");
+        System.out.println("Сотрудник с минимальной зарплатой - " + minSalary() + " руб.");
+        System.out.println("Сотрудник с максимальной зарплатой - " + maxSalary() + " руб.");
+        System.out.println("Средняя зарплата сотрудников равна " + avarageSalary() + "руб.");
     }
 
-    private static void lists(Employee[] list) {
-        for (int i = 0; i < list.length; i++) {
-            System.out.println(list[i]);
+    private static void lists() {
+        for (int i = 0; i < LIST.length; i++) {
+            System.out.println(LIST[i]);
         }
     }
 
     //Сумма затрат на ЗП
-    private static int sumSalary(Employee[] list){
+    private static int sumSalary(){
         int sum = 0;
-        for (int i = 0; i < list.length; i++) {
-            sum = sum + list[i].getSalary();
+        for (int i = 0; i < LIST.length; i++) {
+            sum = sum + LIST[i].getSalary();
         }
         return sum;
     }
 
-    private static int minSalary(Employee[] list) {
+    private static int minSalary() {
         String minSalaryName = null;
-        int minSalary = list[0].getSalary();
-        for (int i = 0; i < list.length; i++) {
-            if (list[i].getSalary() < minSalary) {
-                minSalary = list[i].getSalary();
-                minSalaryName = list[i].getName();
+        int minSalary = LIST[0].getSalary();
+        for (int i = 0; i < LIST.length; i++) {
+            if (LIST[i].getSalary() < minSalary) {
+                minSalary = LIST[i].getSalary();
+                minSalaryName = LIST[i].getName();
             }
         }
         return minSalary;
     }
 
-    private static int maxSalary(Employee[] list) {
+    private static int maxSalary() {
         String maxSalaryName = null;
         int maxSalary = 0;
-        for (int i = 0; i < list.length; i++) {
-            if (list[i].getSalary() > maxSalary) {
-                maxSalary = list[i].getSalary();
-                maxSalaryName = list[i].getName();
+        for (int i = 0; i < LIST.length; i++) {
+            if (LIST[i].getSalary() > maxSalary) {
+                maxSalary = LIST[i].getSalary();
+                maxSalaryName = LIST[i].getName();
             }
         }
         return maxSalary;
     }
 
-    private static float avarageSalary(Employee[] list) {
-        float avarageSum = sumSalary(LIST) / list.length;
+    private static float avarageSalary() {
+        float avarageSum = (float) sumSalary() / LIST.length;
         return avarageSum;
     }
 
-    private static void fioEmployee(Employee[] list) {
-        for (int i = 0; i < list.length; i++) {
-            System.out.println("Ф.И.О. сотрудника - " + list[i].getName());
+    private static void fioEmployee() {
+        for (int i = 0; i < LIST.length; i++) {
+            System.out.println("Ф.И.О. сотрудника - " + LIST[i].getName());
         }
     }
 }
