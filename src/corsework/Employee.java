@@ -14,10 +14,6 @@ public class Employee {
         this.salary = salary;
         id = count++;
 
-
-        int[] departmements = new int[]{1, 2, 3, 4, 5};
-
-
         }
 
         public String getName() {
